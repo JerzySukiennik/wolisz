@@ -1,0 +1,73 @@
+{
+  "rooms": {
+    "$code": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".validate": "$code.matches(/^[A-Z]{4}$/)",
+      "meta": {
+        "phase": { ".validate": "newData.isString() && newData.val().length <= 8" },
+        "round": { ".validate": "newData.isNumber()" },
+        "end": { ".validate": "newData.isNumber()" },
+        "qi": { ".validate": "newData.isNumber()" },
+        "era": { ".validate": "newData.isNumber()" },
+        "used": { ".validate": "newData.isString() && newData.val().length <= 80" },
+        "$other": { ".validate": false }
+      },
+      "pl": {
+        "$uid": {
+          "n": { ".validate": "newData.isString() && newData.val().length <= 14" },
+          "c": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < 12" },
+          "j": { ".validate": "newData.isNumber()" },
+          "pw": { ".validate": "newData.isString() && newData.val().length <= 200" },
+          "$other": { ".validate": false }
+        }
+      },
+      "st": {
+        "$uid": {
+          "x": { ".validate": "newData.isNumber()" },
+          "y": { ".validate": "newData.isNumber()" },
+          "vx": { ".validate": "newData.isNumber()" },
+          "vy": { ".validate": "newData.isNumber()" },
+          "f": { ".validate": "newData.isNumber()" },
+          "g": { ".validate": "newData.isNumber()" },
+          "$other": { ".validate": false }
+        }
+      },
+      "ob": {
+        "$id": {
+          "k": { ".validate": "newData.isString() && newData.val().length <= 8" },
+          "o": { ".validate": "newData.isString() && newData.val().length <= 40" },
+          "x": { ".validate": "newData.isNumber()" },
+          "y": { ".validate": "newData.isNumber()" },
+          "c": { ".validate": "newData.isNumber()" },
+          "w": { ".validate": "newData.isNumber()" },
+          "t": { ".validate": "newData.isNumber()" },
+          "$other": { ".validate": false }
+        }
+      },
+      "ev": {
+        "$id": {
+          "k": { ".validate": "newData.isString() && newData.val().length <= 8" },
+          "o": { ".validate": "newData.isString() && newData.val().length <= 40" },
+          "t": { ".validate": "newData.isNumber()" },
+          "pk": { ".validate": "newData.isString() && newData.val().length <= 8" },
+          "to": { ".validate": "newData.isString() && newData.val().length <= 40" },
+          "x": { ".validate": "newData.isNumber()" },
+          "y": { ".validate": "newData.isNumber()" },
+          "vx": { ".validate": "newData.isNumber()" },
+          "vy": { ".validate": "newData.isNumber()" },
+          "r": { ".validate": "newData.isNumber()" },
+          "f": { ".validate": "newData.isNumber()" },
+          "c": { ".validate": "newData.isNumber()" },
+          "$other": { ".validate": false }
+        }
+      },
+      "pk": {
+        "$round": {
+          "$uid": { ".validate": "newData.val() === 'a' || newData.val() === 'b'" }
+        }
+      },
+      "$other": { ".validate": false }
+    }
+  }
+}
